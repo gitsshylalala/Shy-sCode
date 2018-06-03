@@ -1,0 +1,17 @@
+typedef struct message{//消息
+    int cmd;//网络字节序
+    char body[MSG_LEN];//如果是登录消息，则存用户名
+}MESSAGE;
+
+typedef struct user_info{//用户信息
+    char username[16];
+    unsigned int ip;
+    unsigned short port;
+}USER_INFO;
+
+typedef struct char_msg{//C2C发送消息
+    char username[16];
+    char msg[100];
+}CHAT_MSG;
+
+typedef list<USER_INFO> USER_LIST;
